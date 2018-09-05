@@ -3,8 +3,6 @@
 phases:
 - phase: Test
   queue: 'Hosted Linux Preview'
-    parallel: 2
-
   steps:
   - task: NodeTool@0
     inputs:
