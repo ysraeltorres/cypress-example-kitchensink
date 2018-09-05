@@ -1,9 +1,10 @@
-# Node.js
-# Build a general Node.js application with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/vsts/pipelines/languages/javascript
-
-queue: 'Hosted Linux Preview'
+# run the same job on 2 CI machines in parallel
+# https://docs.microsoft.com/en-us/vsts/pipelines/process/phases
+phases:
+- phase: Test
+  queue: 'Hosted Linux Preview'
+  queue:
+    parallel: 2
 
 steps:
 - task: NodeTool@0
@@ -36,9 +37,3 @@ steps:
 - script: |
     npm run test:ci:record
   displayName: 'Run Cypress tests'
-  # run the same job on 2 CI machines in parallel
-  # https://docs.microsoft.com/en-us/vsts/pipelines/process/phases
-  phases:
-  - phase: Test
-    queue:
-      parallel: 2
