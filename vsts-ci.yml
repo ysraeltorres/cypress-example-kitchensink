@@ -5,13 +5,6 @@
 
 queue: 'Hosted Linux Preview'
 
-# run the same job on 2 CI machines in parallel
-# https://docs.microsoft.com/en-us/vsts/pipelines/process/phases
-phases:
-- phase: Test
-  queue:
-    parallel: 2
-
 steps:
 - task: NodeTool@0
   inputs:
@@ -43,3 +36,9 @@ steps:
 - script: |
     npm run test:ci:record
   displayName: 'Run Cypress tests'
+  # run the same job on 2 CI machines in parallel
+  # https://docs.microsoft.com/en-us/vsts/pipelines/process/phases
+  phases:
+  - phase: Test
+    queue:
+      parallel: 2
