@@ -1,0 +1,7 @@
+# http://docs.shippable.com/ci/tutorials/
+# http://docs.shippable.com/platform/workflow/config/
+
+language: node_js
+
+node_js:
+  - 10
