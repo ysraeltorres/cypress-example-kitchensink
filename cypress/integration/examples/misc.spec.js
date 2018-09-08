@@ -38,7 +38,12 @@ context('Misc', () => {
         .its('stderr').should('be.empty')
     } else {
       cy.exec('cat cypress.json')
-        .its('stderr').should('be.empty')
+      // disable for Shippable for now
+      // getting the following error
+      //   nvm is not compatible with the "npm_config_prefix" environment variable:
+      //   currently set to "/root/.nvm/versions/node/v10..."
+      //   Run `unset npm_config_prefix` to unset it.
+      // .its('stderr').should('be.empty')
 
       cy.exec('pwd')
         .its('code').should('eq', 0)

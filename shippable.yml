@@ -29,12 +29,6 @@ build:
     - npm run print-env -- REPO
     - npm run print-env -- COMMIT
     - npm run print-env -- BUILD
-
-    # getting the following error from cy.exec()
-    #   nvm is not compatible with the "npm_config_prefix" environment variable:
-    #   currently set to "/root/.nvm/versions/node/v10..."
-    #   Run `unset npm_config_prefix` to unset it.
-    - unset npm_config_prfix
     - npm run test:ci:record
 
 # running parallel jobs (if purchased)
