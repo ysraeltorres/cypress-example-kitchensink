@@ -8,10 +8,11 @@ language: node_js
 node_js:
   - "10.4"
 
+env:
+  # CYPRESS_RECORD_KEY
+  - secure: k9eXxEb1ZjXsYYDBF0hrcV6BTbIMXb3zm3deW8t0IqOzyesOjbdgrKk7PF53E17AX0A4fXb4hcFKo/+iaE/ywVMa6E3CddTNSSSayWcGXTRgTQEcD9C+yQJJNdCgb6x9BT3clX5MhESG/FiRZTm5qypLABS7IFYRMAIPhmGV8JABBWIL4DLcKxgxpKek0by3qlMLeoJq4hGfeD4Y6/D1YrgQB0tbw8atX8wgUzW2KcpZ0t2mAFczUo2hkS83rtvXfdK/ZELbjG4Z/GS3izwt0fXISHajn5z07E3bse6vXa7eC0p+6DGxntejgIq4eEMJ7d/m3ygNFyFBxSZo1x0e2Q==
+
 build:
   ci:
     - npm ci
     - npm run test:ci:record
-
-# CYPRESS_RECORD_KEY
-- secure: k9eXxEb1ZjXsYYDBF0hrcV6BTbIMXb3zm3deW8t0IqOzyesOjbdgrKk7PF53E17AX0A4fXb4hcFKo/+iaE/ywVMa6E3CddTNSSSayWcGXTRgTQEcD9C+yQJJNdCgb6x9BT3clX5MhESG/FiRZTm5qypLABS7IFYRMAIPhmGV8JABBWIL4DLcKxgxpKek0by3qlMLeoJq4hGfeD4Y6/D1YrgQB0tbw8atX8wgUzW2KcpZ0t2mAFczUo2hkS83rtvXfdK/ZELbjG4Z/GS3izwt0fXISHajn5z07E3bse6vXa7eC0p+6DGxntejgIq4eEMJ7d/m3ygNFyFBxSZo1x0e2Q==
