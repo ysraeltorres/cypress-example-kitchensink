@@ -18,4 +18,8 @@ build:
     - npm ci
     # prints all environment variables that start with SHIPPABLE
     - npm run print-env -- SHIPPABLE
+    - npm run print-env -- IS
+    - npm run print-env -- REPO
+    - npm run print-env -- COMMIT
+    - npm run print-env -- BUILD
     - npm run test:ci:record
