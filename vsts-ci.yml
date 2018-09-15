@@ -48,6 +48,9 @@ jobs:
   - script: npm ci
     displayName: 'Install NPM dependencies'
 
+  - script: ls -la ~/.npm || true
+    displayName: '.npm folder after npm ci'
+
   # on Linux usually prints /root/.cache/Cypress
   - script: npx cypress cache path
     displayName: 'Cypress cached path'
