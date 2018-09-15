@@ -37,29 +37,30 @@ resources:
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted
 
 jobs:
-- job: cy_e2e_windows
-  pool:
-    # vmImage: 'Hosted' # Windows image
-    name: 'Windows'
-    vmImage: 'vs2017-win2017' # Windows image with NPM@5
-  strategy:
-    parallel: 4
-  steps:
-  # "Hosted" and "Hosted VS2017" VM images have older npm version
-  # - script: npm i -g npm@6
-  #   displayName: 'Install NPM with CI support'
-  - script: printenv
-    displayName: 'print env'
-  - script: npm --version && npm install
-    displayName: 'Install NPM dependencies'
-  - script: npm run print-env -- BUILD
-    displayName: 'print environment variables that start with BUILD'
-  - script: npm run cy:verify
-    displayName: 'Cypress verify'
-  # - script: npm run test:ci:record:parallel
-  #   displayName: 'Run Cypress tests'
-    # env:
-    #   CYPRESS_RECORD_KEY: $(cypressKitchensinkRecordKey)
+
+# - job: cy_e2e_windows
+#   pool:
+#     # vmImage: 'Hosted' # Windows image
+#     name: 'Windows'
+#     vmImage: 'vs2017-win2017' # Windows image with NPM@5
+#   strategy:
+#     parallel: 4
+#   steps:
+#   # "Hosted" and "Hosted VS2017" VM images have older npm version
+#   # - script: npm i -g npm@6
+#   #   displayName: 'Install NPM with CI support'
+#   - script: printenv
+#     displayName: 'print env'
+#   - script: npm --version && npm install
+#     displayName: 'Install NPM dependencies'
+#   - script: npm run print-env -- BUILD
+#     displayName: 'print environment variables that start with BUILD'
+#   - script: npm run cy:verify
+#     displayName: 'Cypress verify'
+#   # - script: npm run test:ci:record:parallel
+#   #   displayName: 'Run Cypress tests'
+#     # env:
+#     #   CYPRESS_RECORD_KEY: $(cypressKitchensinkRecordKey)
 
 - job: cy_e2e_linux
 
