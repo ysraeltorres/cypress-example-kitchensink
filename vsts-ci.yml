@@ -37,6 +37,11 @@ jobs:
   - script: npm ci
     displayName: 'Install NPM dependencies'
 
+  - script: npx cypress cache path
+    displayName: 'Cypress cached path'
+  - script: npx cypress cache list
+    displayName: 'Cypress list of cached versions'
+
   # always interesting to see build-related environment variables
   # https://docs.microsoft.com/en-us/vsts/pipelines/build/variables?view=vsts
   - script: npm run print-env -- BUILD
