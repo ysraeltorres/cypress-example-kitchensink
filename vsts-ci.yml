@@ -65,9 +65,9 @@ jobs:
 - job: cy_e2e_linux
 
   pool:
-    # name: 'Linux'
+    name: 'Linux'
     # vmImage: 'ubuntu-16.04'
-    vmImage: 'Hosted Linux Preview'
+    vmImage: ubuntu-1604
 
   strategy:
     parallel: 5
