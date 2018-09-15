@@ -68,7 +68,10 @@ jobs:
 
   - script: npm ci
     displayName: 'Install NPM dependencies'
-    # env:
+    env:
+      # avoid multiple progress bar messages
+      # https://github.com/cypress-io/cypress/issues/1243
+      CI: "1"
     #   CYPRESS_CACHE_FOLDER: /root/.npm/_cacache/Cypress
 
   # - script: du -h ~/.npm/_cacache || true
