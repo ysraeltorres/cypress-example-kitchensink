@@ -26,6 +26,8 @@
 
 jobs:
 - job: InitialJob
+  pool:
+    vmImage: 'Hosted Linux Preview'
   strategy:
     parallel: 1
   steps:
