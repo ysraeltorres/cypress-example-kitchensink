@@ -24,12 +24,13 @@
 # 4 machines: 1:01
 # 10 machines: 0:30
 
+env:
+  CYPRESS_CACHE_FOLDER: /root/.npm/_cacache/Cypress
+
 jobs:
 - job: InitialJob
   strategy:
     parallel: 1
-  env:
-    CYPRESS_CACHE_FOLDER: /root/.npm/_cacache/Cypress
   steps:
   - task: NodeTool@0
     inputs:
