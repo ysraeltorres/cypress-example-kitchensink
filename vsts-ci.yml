@@ -33,12 +33,15 @@ resources:
   - container: CypressContainer
     image: cypress/base:10
 
+# image names from
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted
+
 jobs:
 - job: cy_e2e_windows
   pool:
     # vmImage: 'Hosted' # Windows image
     name: 'Windows'
-    vmImage: 'Hosted VS2017' # Windows image with NPM@5
+    vmImage: 'vs2017-win2017' # Windows image with NPM@5
   strategy:
     parallel: 4
   steps:
@@ -62,7 +65,7 @@ jobs:
 
   pool:
     name: 'Linux'
-    vmImage: 'Hosted Linux Preview'
+    vmImage: 'ubuntu-16.04'
 
   strategy:
     parallel: 5
