@@ -24,9 +24,6 @@
 # 4 machines: 1:01
 # 10 machines: 0:30
 
-env:
-  CYPRESS_CACHE_FOLDER: /root/.npm/_cacache/Cypress
-
 jobs:
 - job: InitialJob
   strategy:
@@ -53,6 +50,8 @@ jobs:
 
   - script: npm ci
     displayName: 'Install NPM dependencies'
+    env:
+      CYPRESS_CACHE_FOLDER: /root/.npm/_cacache/Cypress
 
   - script: du -h ~/.npm/_cacache || true
     displayName: '.npm folder after npm ci'
