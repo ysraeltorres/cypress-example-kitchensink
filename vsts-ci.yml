@@ -17,10 +17,13 @@
 #   steps:
 #   - script: echo hello from subsequent B
 
+# running all tests on 1 machine: Cypress tests took 3:00
+# load balanced on 2 machines: 1:46
+
 jobs:
 - job: InitialJob
   strategy:
-    parallel: 2
+    parallel: 3
   steps:
   - task: NodeTool@0
     inputs:
