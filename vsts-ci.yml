@@ -34,11 +34,12 @@ resources:
 jobs:
 - job: cy_e2e_windows
   pool:
-    vmImage: 'Hosted' # Windows image
+    # vmImage: 'Hosted' # Windows image
+    vmImage: 'Hosted VS2017'
   strategy:
     parallel: 1
   steps:
-  - script: npm ci
+  - script: npm --version && npm ci
     displayName: 'Install NPM dependencies'
   - script: npm run print-env -- BUILD
     displayName: 'print environment variables that start with BUILD'
