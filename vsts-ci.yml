@@ -39,6 +39,9 @@ jobs:
   strategy:
     parallel: 1
   steps:
+  # "Hosted" and "Hosted VS2017" VM images have older npm version
+  - script: npm i -g npm@6
+    displayName: 'Install NPM with CI support'
   - script: npm --version && npm ci
     displayName: 'Install NPM dependencies'
   - script: npm run print-env -- BUILD
