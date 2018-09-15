@@ -28,7 +28,7 @@ jobs:
 - job: InitialJob
   strategy:
     parallel: 1
-  environment:
+  env:
     CYPRESS_CACHE_FOLDER: /root/.npm/_cacache/Cypress
   steps:
   - task: NodeTool@0
