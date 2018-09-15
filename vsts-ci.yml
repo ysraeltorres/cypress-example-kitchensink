@@ -24,6 +24,8 @@
 # 4 machines: 1:01
 # 10 machines: 0:30
 
+# How to run different jobs in different pools?
+
 # custom container for the job
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
 resources:
@@ -35,6 +37,7 @@ jobs:
 - job: cy_e2e_windows
   pool:
     # vmImage: 'Hosted' # Windows image
+    name: 'Windows'
     vmImage: 'Hosted VS2017' # Windows image with NPM@5
   strategy:
     parallel: 4
@@ -58,6 +61,7 @@ jobs:
 - job: cy_e2e_linux
 
   pool:
+    name: 'Linux'
     vmImage: 'Hosted Linux Preview'
 
   strategy:
