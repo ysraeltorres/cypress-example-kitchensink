@@ -42,6 +42,9 @@ jobs:
   # - script: apt-get update && apt-get install -y libgconf-2-4
   #   displayName: 'install dependencies'
 
+  - script: npm config get cache
+    displayName: 'see NPM cache folder'
+
   - script: du -h ~/.npm/_cacache || true
     displayName: 'current .npm folder'
 
