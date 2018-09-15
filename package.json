@@ -17,7 +17,7 @@
     "e2e": "cypress run",
     "e2e:chrome": "cypress run --browser chrome",
     "e2e:record": "cypress run --record",
-    "e2e:record:parallel": "cypress run --record --parallel",
+    "e2e:record:parallel": "cypress run --record --parallel --ci-build-id $BUILD_BUILDNUMBER",
     "test:ci": "run-p --race start:ci e2e",
     "test:ci:chrome": "run-p --race start:ci e2e:chrome",
     "test:ci:record": "run-p --race start:ci e2e:record",
