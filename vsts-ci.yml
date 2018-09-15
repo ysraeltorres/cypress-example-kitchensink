@@ -56,7 +56,7 @@ jobs:
   - script: npm run cy:verify
     displayName: 'Cypress verify'
 
-  - script: npm run test:ci:record
+  - script: npm run test:ci:record:parallel
     displayName: 'Run Cypress tests'
     env:
       CYPRESS_RECORD_KEY: $(cypressKitchensinkRecordKey)
