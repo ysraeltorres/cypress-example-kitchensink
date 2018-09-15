@@ -35,9 +35,9 @@ jobs:
 - job: cy_e2e_windows
   pool:
     # vmImage: 'Hosted' # Windows image
-    vmImage: 'Hosted VS2017'
+    vmImage: 'Hosted VS2017' # Windows image with NPM@5
   strategy:
-    parallel: 1
+    parallel: 4
   steps:
   # "Hosted" and "Hosted VS2017" VM images have older npm version
   # - script: npm i -g npm@6
@@ -50,7 +50,7 @@ jobs:
     displayName: 'print environment variables that start with BUILD'
   - script: npm run cy:verify
     displayName: 'Cypress verify'
-  - script: npm run test:ci:record
+  - script: npm run test:ci:record:parallel
     displayName: 'Run Cypress tests'
     env:
       CYPRESS_RECORD_KEY: $(cypressKitchensinkRecordKey)
