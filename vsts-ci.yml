@@ -32,7 +32,7 @@ resources:
     image: cypress/base:10
 
 jobs:
-- job: cy-e2e-windows
+- job: cy_e2e_windows
   pool:
     vmImage: 'Hosted' # Windows image
   strategy:
@@ -49,7 +49,7 @@ jobs:
     env:
       CYPRESS_RECORD_KEY: $(cypressKitchensinkRecordKey)
 
-# - job: cy-e2e
+# - job: cy_e2e_docker
 
 #   # Note: when specifying custom container
 #   # Due to a bug, you must currently specify "Hosted Ubuntu 1604"
