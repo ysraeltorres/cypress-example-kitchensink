@@ -46,10 +46,11 @@ jobs:
   strategy:
     parallel: 1
   steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '10.x'
-    displayName: 'Install Node.js'
+  # in container cypress/base Node is already installed
+  # - task: NodeTool@0
+  #   inputs:
+  #     versionSpec: '10.x'
+  #   displayName: 'Install Node.js'
 
   # VSTS hosted Linux agents already have a LOT of dependencies preinstalled
   # https://github.com/Microsoft/vsts-agent-docker
@@ -62,16 +63,16 @@ jobs:
   - script: npm config get cache
     displayName: 'see NPM cache folder'
 
-  - script: du -h ~/.npm/_cacache || true
-    displayName: 'current .npm folder'
+  # - script: du -h ~/.npm/_cacache || true
+  #   displayName: 'current .npm folder'
 
   - script: npm ci
     displayName: 'Install NPM dependencies'
-    env:
-      CYPRESS_CACHE_FOLDER: /root/.npm/_cacache/Cypress
+    # env:
+    #   CYPRESS_CACHE_FOLDER: /root/.npm/_cacache/Cypress
 
-  - script: du -h ~/.npm/_cacache || true
-    displayName: '.npm folder after npm ci'
+  # - script: du -h ~/.npm/_cacache || true
+  #   displayName: '.npm folder after npm ci'
 
   # on Linux usually prints /root/.cache/Cypress
   - script: npx cypress cache path
