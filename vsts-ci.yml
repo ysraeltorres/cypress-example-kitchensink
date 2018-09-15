@@ -24,10 +24,18 @@
 # 4 machines: 1:01
 # 10 machines: 0:30
 
+# custom container for the job
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
+resources:
+  containers:
+  - container: CypressContainer
+    image: cypress/base:10
+
 jobs:
 - job: InitialJob
   pool:
     vmImage: 'Hosted Linux Preview'
+  container: CypressContainer
   strategy:
     parallel: 1
   steps:
