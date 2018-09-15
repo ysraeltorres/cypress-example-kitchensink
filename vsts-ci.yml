@@ -20,11 +20,12 @@
 # running all tests on 1 machine: Cypress tests took 3:00
 # load balanced on 2 machines: 1:46
 # load balanced with 3 machines: 1:20
+# 4 machines: 1:01
 
 jobs:
 - job: InitialJob
   strategy:
-    parallel: 4
+    parallel: 10
   steps:
   - task: NodeTool@0
     inputs:
