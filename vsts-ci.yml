@@ -27,7 +27,7 @@
 jobs:
 - job: InitialJob
   strategy:
-    parallel: 10
+    parallel: 1
   steps:
   - task: NodeTool@0
     inputs:
@@ -38,8 +38,12 @@ jobs:
   # https://github.com/Microsoft/vsts-agent-docker
   # so we don't have to install all recommended Cypress dependencies
   # https://on.cypress.io/continuous-integration#Dependencies
+  # but it would be nice if we could use custom Docker image like "cypress/base:10"
   - script: apt-get update && apt-get install -y libgconf-2-4
     displayName: 'install dependencies'
+
+  - script: ls -la ~/.npm || true
+    displayName: 'current .npm folder'
 
   - script: npm ci
     displayName: 'Install NPM dependencies'
