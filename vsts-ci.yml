@@ -33,9 +33,8 @@ resources:
 
 jobs:
 - job: InitialJob
-  Note
 
-  # when specifying custom container
+  # Note: when specifying custom container
   # Due to a bug, you must currently specify "Hosted Ubuntu 1604"
   # as the pool name in order to run containers. Other pools will not work.
   # In September 2018, we expect to remove the need to specify a pool.
