@@ -33,8 +33,8 @@ resources:
 
 jobs:
 - job: InitialJob
-  pool:
-    vmImage: 'Hosted Linux Preview'
+  # pool:
+  #   vmImage: 'Hosted Linux Preview'
   container: CypressContainer
   strategy:
     parallel: 1
