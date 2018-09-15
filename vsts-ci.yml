@@ -1,5 +1,11 @@
+# Parallel job definitions
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/process/multiple-phases
+
 jobs:
 - job: InitialJob
+  strategy:
+    parallel: 2
   steps:
   - script: echo hello from initial job
 - job: SubsequentA
