@@ -42,6 +42,8 @@ jobs:
   # "Hosted" and "Hosted VS2017" VM images have older npm version
   # - script: npm i -g npm@6
   #   displayName: 'Install NPM with CI support'
+  - script: printenv
+    displayName: 'print env'
   - script: npm --version && npm install
     displayName: 'Install NPM dependencies'
   - script: npm run print-env -- BUILD
