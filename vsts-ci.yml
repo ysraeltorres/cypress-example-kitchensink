@@ -37,6 +37,7 @@ jobs:
   - script: npm ci
     displayName: 'Install NPM dependencies'
 
+  # on Linux usually prints /root/.cache/Cypress
   - script: npx cypress cache path
     displayName: 'Cypress cached path'
   - script: npx cypress cache list
